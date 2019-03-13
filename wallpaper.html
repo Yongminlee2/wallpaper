@@ -6,130 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>wallpaper</title>
     <style>
-            html,
-            body,
-            div,
-            span,
-            applet,
-            object,
-            iframe,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            p,
-            blockquote,
-            pre,
-            a,
-            abbr,
-            acronym,
-            address,
-            big,
-            cite,
-            code,
-            del,
-            dfn,
-            em,
-            img,
-            ins,
-            kbd,
-            q,
-            s,
-            samp,
-            small,
-            strike,
-            strong,
-            sub,
-            sup,
-            tt,
-            var,
-            b,
-            u,
-            i,
-            center,
-            dl,
-            dt,
-            dd,
-            ol,
-            ul,
-            li,
-            fieldset,
-            form,
-            label,
-            legend,
-            table,
-            caption,
-            tbody,
-            tfoot,
-            thead,
-            tr,
-            th,
-            td,
-            article,
-            aside,
-            canvas,
-            details,
-            embed,
-            figure,
-            figcaption,
-            footer,
-            header,
-            hgroup,
-            menu,
-            nav,
-            output,
-            ruby,
-            section,
-            summary,
-            time,
-            mark,
-            audio,
-            video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-            box-sizing: border-box;
+            .wallpaper_body,.reset{
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                vertical-align: baseline;
+                box-sizing: border-box;
             }
-            /* HTML5 display-role reset for older browsers */
-            article,
-            aside,
-            details,
-            figcaption,
-            figure,
-            footer,
-            header,
-            hgroup,
-            menu,
-            nav,
-            section {
-            display: block;
-            }
-            body {
-            line-height: 1;
-            }
-            ol,
-            ul {
-            list-style: none;
-            }
-            blockquote,
-            q {
-            quotes: none;
-            }
-            blockquote:before,
-            blockquote:after,
-            q:before,
-            q:after {
-            content: '';
-            content: none;
-            }
-            table {
-            border-collapse: collapse;
-            border-spacing: 0;
+
+            .wallpaper_body{
+                height: 430px;
             }
 
             .wallpaper{
@@ -251,42 +138,44 @@
     </style>
 </head>
 <body>
-    <div class="wallpaper">
-        <div class="wallpaper_top">
-            <div class="wallpaper_top-column" id="paper1" onclick="longpaper()">장폭합지</div>
-            <div class="wallpaper_top-column" id="paper2" onclick="silkpaper()">실크벽지</div>
-            <div class="wallpaper_top-column" id="paper3" onclick="shortpaper()">소폭합지</div>
-            <div class="wallpaper_top-column" id="paper4" onclick="firepaper()">단열벽지</div>
+    <div class="wallpaper_body">
+    <div class="reset wallpaper">
+        <div class="reset wallpaper_top">
+            <div class="reset wallpaper_top-column" id="paper1" onclick="longpaper()">장폭합지</div>
+            <div class="reset wallpaper_top-column" id="paper2" onclick="silkpaper()">실크벽지</div>
+            <div class="reset wallpaper_top-column" id="paper3" onclick="shortpaper()">소폭합지</div>
+            <div class="reset wallpaper_top-column" id="paper4" onclick="firepaper()">단열벽지</div>
         </div>
-        <div class="wallpaper_bottom">
-            <div class="wallpaper_bottom-calinput">
+        <div class="reset wallpaper_bottom">
+            <div class="reset wallpaper_bottom-calinput">
                 <input type="number" class="calinput-width" placeholder="벽높이 (가로길이)">
-                <span class="cm">cm</span> 
-                <span class="x">X</span> 
+                <span class="reset cm">cm</span> 
+                <span class="reset x">X</span> 
                 <input type="number" class="calinput-height" placeholder="벽면 전체길이 (세로길이)">
-                <span class="cm">cm</span> 
-                <span class="cal_start" onclick="calculator(1770,0.93)">계산하기</span>
+                <span class="reset cm">cm</span> 
+                <span class="reset cal_start" onclick="calculator(1770,0.93)">계산하기</span>
             </div>
-            <div class="wallpaper_bottom-column">
-                <div class="wallpaper_bottom-up">
-                    <div class="bottom-column battom-color">실사용 폭</div>
-                    <div class="bottom-column battom-color">실 소요량</div>
-                    <div class="bottom-column battom-color">구매 수량</div>
+            <div class="reset wallpaper_bottom-column">
+                <div class="reset wallpaper_bottom-up">
+                    <div class="reset bottom-column battom-color">실사용 폭</div>
+                    <div class="reset bottom-column battom-color">실 소요량</div>
+                    <div class="reset bottom-column battom-color">구매 수량</div>
                 </div>
-                <div class="wallpaper_bottom-down">
-                    <div class="bottom-column"><span class="red-color" id ="realwidth">0</span><span>롤</span></div>                   
-                    <div class="bottom-column"><span class="red-color" id ="realpaper">0</span><span>롤</span></div>                   
-                    <div class="bottom-column"><span class="red-color" id ="buypaper">0</span><span>롤</span></div>                   
+                <div class="reset wallpaper_bottom-down">
+                    <div class="reset bottom-column"><span class="reset red-color" id ="realwidth">0</span><span>롤</span></div>                   
+                    <div class="reset bottom-column"><span class="reset red-color" id ="realpaper">0</span><span>롤</span></div>                   
+                    <div class="reset bottom-column"><span class="reset red-color" id ="buypaper">0</span><span>롤</span></div>                   
                 </div>
             </div>
         </div>
     </div>
-    <div class="wallpaper_Introduces">
-        <div class="wallpaper_Introduce"> - 벽면 길이는 방 전체의 길이(가로+세로) 4면의 길이를 더한 길이를 입력한다.</div>
-        <div class="wallpaper_Introduce"> - 천정벽지는 가로 세로 방향의 변화에 따라 소요량의 차이가 날 수 있습니다.</div>
-        <div class="wallpaper_Introduce"> - 무늬가 없는 벽지계산이며 무늬가 큰 벽지의 경우 벽지소요량이 추가될 수 있습니다.</div>
-        <div class="wallpaper_Introduce"> - 벽지소요량은 작업환경과 시공방법에 따라 달라질 수 있습니다.</div>
+    <div class="reset wallpaper_Introduces">
+        <div class="reset wallpaper_Introduce"> - 벽면 길이는 방 전체의 길이(가로+세로) 4면의 길이를 더한 길이를 입력한다.</div>
+        <div class="reset wallpaper_Introduce"> - 천정벽지는 가로 세로 방향의 변화에 따라 소요량의 차이가 날 수 있습니다.</div>
+        <div class="reset wallpaper_Introduce"> - 무늬가 없는 벽지계산이며 무늬가 큰 벽지의 경우 벽지소요량이 추가될 수 있습니다.</div>
+        <div class="reset wallpaper_Introduce"> - 벽지소요량은 작업환경과 시공방법에 따라 달라질 수 있습니다.</div>
     </div>
+</div>
 </body>
 
 <script>
