@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wallpaper</title>
+    <style>
+            .wallpaper_body,.reset{
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                vertical-align: baseline;
+                box-sizing: border-box;
+            }
+
+            .wallpaper_body{
+                height: 430px;
+            }
+
+            .wallpaper{
+                left: 50px;
+                position: relative;
+                top: 30px;
+                width: 1000px;
+                height: 300px;
+                border: 1px solid #E2E2E2;
+                font-family: 'Nanum Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+
+            .wallpaper_Introduces{
+                margin-left: 60px;
+                margin-top : 40px;
+                position: absolute;
+                font-family: 'Nanum Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .wallpaper_Introduce{
+                font-weight: 400;
+                color: #626262;
+                font-size: 15px;
+                margin-top: 2px;
+            }
+
+            .wallpaper_top-column{
+                display: inline-block;
+                width: 25%;
+                text-align: center;
+                padding: 25px;
+                margin: 0px;
+                float: left;
+                font-size: 20px;
+                cursor: pointer;
+                margin-bottom: 20px;
+                border-bottom: 1px  solid gray;
+            }
+            /* 
+            .wallpaper_top-column:first-child{
+            } */
+
+            .wallpaper_top-column:hover{
+                background-color: #C3C3C3;
+                
+            }
+
+            .calinput-height,.calinput-width{
+                border-radius: 5px;
+                border: 1px solid #E3E3E3;
+                padding: 20px;
+                font-size: 20px;
+                text-align: center;
+                float: left;
+                width: 240px;
+            }
+            .calinput-width{
+                margin-left: 25px;
+            }
+
+            .x{
+                padding: 25px;
+                font-size: 25px;    
+                float: left;
+            }
+            .cm{
+                padding-top: 40px;
+                padding-left: 5px;
+                float: left;
+            }
+            .cal_start{
+                border-radius: 5px;
+                border: 1px solid #E3E3E3;
+                padding: 20px;
+                font-size: 25px;
+                text-align: center;
+                float: left;
+                color: white;
+                width: 240px;
+                margin-left: 30px;
+                background-color: #E2E2E2;
+                cursor: pointer;
+            }
+            .cal_start:active{
+                background-color: #A0A0A0;
+                border: 1px solid gray;
+            }
+            .cal_start:hover{
+                background-color: #B6B6B6;
+            }
+
+            .bottom-column{
+                width: 33.333%;
+                display: inline-block;
+                border-top: 1px solid #E2E2E2;
+                float: left;
+                text-align: center;
+                padding: 20px;
+            }
+            .bottom-column:nth-child(2){
+                border-left: 1px solid #E2E2E2;
+                border-right: 1px solid #E2E2E2;
+            }
+            .battom-color{
+                background-color: #F2F2F2;
+            }
+
+            .wallpaper_bottom-column{
+                width: 100%;
+                height: 115px;
+                float: left;
+                position: absolute;
+                bottom: 0px;
+            }
+            .red-color{
+                font-size: 20px;
+                color: red;
+            }
+
+    </style>
+</head>
+<body>
+<object style="width: 900px; height: 1000px" data="https://inflow.pay.naver.com/rd?tr=ds&retUrl=http%3A%2F%2F0153.co.kr/page/index?tpl=etc%2Fnewfile.html"></object>
+</body>
+
+<script>
+    var selector1 = document.querySelector('#paper1');
+    var selector2 = document.querySelector('#paper2');
+    var selector3 = document.querySelector('#paper3');
+    var selector4 = document.querySelector('#paper4');
+
+    var inputwidth = document.querySelector('.calinput-width');
+    var inputheight = document.querySelector('.calinput-height');
+
+    var span1 = document.querySelector('#realwidth');
+    var span2 = document.querySelector('#realpaper');
+    var span3 = document.querySelector('#buypaper');
+
+
+    selector1.style.backgroundColor = "gray";
+
+
+    function calculator(num1,num2){
+        var inputwidth2 = parseInt(inputwidth.value);
+        var inputheight2 = parseInt(inputheight.value);
+
+        var realwidth = Math.floor(num1/(inputwidth2+10));
+        var realpaper = Math.floor(((inputheight2/100)/(realwidth*num2))*100)/100;
+        var buypaper = Math.ceil((inputheight2/100)/(realwidth*num2));
+
+        span1.innerText = realwidth;
+        span2.innerText = realpaper;
+        span3.innerText = buypaper;
+    }
+
+
+    function longpaper(){
+        selector1.style.backgroundColor = "gray";
+        selector2.style.backgroundColor = "";
+        selector3.style.backgroundColor = "";
+        selector4.style.backgroundColor = "";
+        initvalue();
+
+        document.querySelector(".cal_start").setAttribute("onclick","calculator(1770,0.93)");
+    }
+
+    function silkpaper(){
+        selector1.style.backgroundColor = "";
+        selector2.style.backgroundColor = "gray";
+        selector3.style.backgroundColor = "";
+        selector4.style.backgroundColor = "";
+        initvalue();
+
+        document.querySelector(".cal_start").setAttribute("onclick","calculator(1550,1.06)");
+
+    }
+
+    function shortpaper(){
+        selector1.style.backgroundColor = "";
+        selector2.style.backgroundColor = "";
+        selector3.style.backgroundColor = "gray";
+        selector4.style.backgroundColor = "";
+        initvalue();
+
+        document.querySelector(".cal_start").setAttribute("onclick","calculator(1200,0.52)");
+    }
+
+    function firepaper(){
+        selector1.style.backgroundColor = "";
+        selector2.style.backgroundColor = "";
+        selector3.style.backgroundColor = "";
+        selector4.style.backgroundColor = "gray";
+        initvalue();
+
+        document.querySelector(".cal_start").setAttribute("onclick","calculator(2000,1)");
+    }
+
+    function initvalue(){
+        span1.innerText="0";
+        span2.innerText="0";
+        span3.innerText="0";
+    }
+
+</script>
+
+</html>
